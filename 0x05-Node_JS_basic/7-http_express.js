@@ -17,17 +17,17 @@ app.get('/students', (req, res) => {
   fs.readFile(databaseFilePath, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
-      return res.status(500).send('Internal Server Error');
+      return res.status(400).send(`This is the list of our students Cannot load the database`);
     }
 
     const lines = data.trim().split('\n');
     const headers = lines[0].split(',');
 
-    for (let i = 1; i < lines.length; i++) {
+    for (let i = 1; i < lines.length; i += 1) {
       const values = lines[i].split(',');
       const student = {};
 
-      for (let j = 0; j < headers.length; j++) {
+      for (let j = 0; j < headers.length; j += 1) {
         student[headers[j]] = values[j];
       }
 
