@@ -6,9 +6,14 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
-  console.log(`Your name is: ${name}`);
+try {
+  rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
+    console.log(`Your name is: ${name}`);
 
-  console.log('This important software is now closing');
+    rl.close();
+    console.log('This important software is now closing');
+  });
+} catch (error) {
+  console.error(error);
   rl.close();
-});
+}
