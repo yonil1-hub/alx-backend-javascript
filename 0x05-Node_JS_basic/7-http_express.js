@@ -53,8 +53,8 @@ app.get('/students', (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404).send('Method is not defined')
-)};
+  res.status(404).send('Method is not defined');
+});
 
 app.listen(1245, () => {
   console.log('Server listening on port 1245');
