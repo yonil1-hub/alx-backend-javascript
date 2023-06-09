@@ -8,12 +8,14 @@ const rl = readline.createInterface({
 
 try {
   rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
-    console.log(`Your name is: ${name.trim()}`); // Trim the name to remove leading/trailing spaces
+    console.log(`Your name is: ${name.trim()}`);
 
     rl.close();
     console.log('This important software is now closing');
+    process.exit(0);
   });
 } catch (error) {
   console.error(error);
   rl.close();
+  process.exit(1);
 }
