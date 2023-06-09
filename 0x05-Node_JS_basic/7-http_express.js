@@ -39,6 +39,7 @@ app.get('/students', (req, res) => {
           studentsSWE.push(`${student.firstname}`);
         }
       }
+      return 'Reading file completed'
     }
 
     const response = [
